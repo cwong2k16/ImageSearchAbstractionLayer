@@ -1,0 +1,24 @@
+{
+  "name": "imagesearchabstractionlayer",
+  "version": "1.0.0",
+  "description": "queries a string and returns 10 google image data; has feature for 10 most recent queries",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "google-search": "0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwong2k16/ImageSearchAbstractionLayer.git"
+  },
+  "author": "Christopher Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwong2k16/ImageSearchAbstractionLayer/issues"
+  },
+  "homepage": "https://github.com/cwong2k16/ImageSearchAbstractionLayer#readme"
+}
