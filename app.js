@@ -13,6 +13,10 @@ var schema = new mongoose.Schema({
 
 var dbUrl = mongoose.model("ImageSearch", schema);
 
+app.get('/', function(req, res){
+    res.sendFile(__dirname + "/views/index.html");
+});
+
 app.get('/api/GoogleImages/:query', function(req, res){
     var page = req.query.offset;
     if(page == null){
