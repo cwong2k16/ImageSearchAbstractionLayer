@@ -10,9 +10,17 @@ app.get('/api/GoogleImages/:query', function(req, res){
         page = 1;
     }
     var topic = req.params.query;
-
+    var relevantData = [];
     client.search(topic, {page: page}).then(function(image){
-        res.json(image);
+        for(var i = 0; i < image.length; i++){
+            var jsonObj = {
+                url: image[i].url,
+                text: image[i].description,
+                parentPage: image[i].parentPage
+            };
+            relevantData.push(jsonObj);
+        }
+        res.json(relevantData);
     });
 });
 
