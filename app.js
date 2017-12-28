@@ -1,8 +1,17 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var GoogleImages = require('google-images');
 var client = new GoogleImages('001310055279050736320:1rkhztthlfo', 'AIzaSyC7YbQe674pVlTDHaZJN9j4-kASOVNCLiQ');
 
 var app = express();
+
+mongoose.connect('');
+
+var schema = new mongoose.Schema({
+    query: String
+});
+
+mongoose.model("ImageSearch", schema);
 
 app.get('/api/GoogleImages/:query', function(req, res){
     var page = req.query.offset;
@@ -22,6 +31,10 @@ app.get('/api/GoogleImages/:query', function(req, res){
         }
         res.json(relevantData);
     });
+});
+
+app.get('/api/recent/', function(req, res){
+
 });
 
 app.listen(8003);
